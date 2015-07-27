@@ -3,8 +3,8 @@
 	<fieldset>
 		<legend><?php echo __('Add User'); ?></legend>
 	<?php
-		echo $this->Form->input('PersonID', array('options' => $userPeople));
-		echo $this->Form->input('Role', array('options' => $userRoles));
+		echo $this->Form->input('PersonID', array('options' => $Person));
+		echo $this->Form->input('RoleID', array('options' => $Role));
 		echo $this->Form->input('Login');
 		echo $this->Form->input('Password');
 		echo $this->Form->input('Active');

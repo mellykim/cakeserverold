@@ -111,8 +111,8 @@ class User extends AppModel {
         ),
         'Role' => array(
             'className' => 'Role',
-            'foreignKey' => 'Role',
-            'conditions' => array('User.Role = Role.RoleID')
+            'foreignKey' => 'RoleID',
+            'conditions' => array('User.RoleID = Role.RoleID')
         )
     );   
     

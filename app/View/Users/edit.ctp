@@ -5,8 +5,8 @@
 	<?php
 		echo $this->Form->input('UserID');
 		echo $this->Form->input('PersonID');
-		echo $this->Form->input('Role');
-		echo $this->Form->input('Login');
+		echo $this->Form->input('RoleID');
+		echo $this->Form->input('Username');
 		echo $this->Form->input('Password');
 		echo $this->Form->input('Active');
 	?>

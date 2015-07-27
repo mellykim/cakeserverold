@@ -8,17 +8,17 @@
 		</dd>
 		<dt><?php echo __('PersonID'); ?></dt>
 		<dd>
-			<?php echo h($user['User']['PersonID']); ?>
+			<?php echo h($user['Person']['FirstName']); ?>
 			&nbsp;
 		</dd>
-		<dt><?php echo __('Role'); ?></dt>
+		<dt><?php echo __('RoleID'); ?></dt>
 		<dd>
-			<?php echo h($user['User']['Role']); ?>
+			<?php echo h($user['Role']['RoleDescription']); ?>
 			&nbsp;
 		</dd>
-		<dt><?php echo __('Login'); ?></dt>
+		<dt><?php echo __('Username'); ?></dt>
 		<dd>
-			<?php echo h($user['User']['Login']); ?>
+			<?php echo h($user['User']['Username']); ?>
 			&nbsp;
 		</dd>
 		<dt><?php echo __('Password'); ?></dt>

@@ -55,13 +55,13 @@ class UsersController extends AppController {
  * @return void
  */
     public function view($id = null) {
-            if (!$this->User->exists($id)) {
-                    throw new NotFoundException(__('Invalid user'));
-            }
-    //	$options = array('conditions' => array('User.' . $this->User->primaryKey => $id));
-    //	$this->set('user', $this->User->find('first', $options));
-    // added for the auth tute
-            $this->set('user', $this->User->findById($id));
+        if (!$this->User->exists($id)) {
+                throw new NotFoundException(__('Invalid user'));
+        }
+        $options = array('conditions' => array('User.' . $this->User->primaryKey => $id));
+    	$this->set('user', $this->User->find('first', $options));
+    // added for the auth tute and since we don't have user_id we can't use it
+    //        $this->set('user', $this->User->findById($id));
     }
 
 /**

@@ -4,8 +4,8 @@
 	<tr>
 			<th><?php echo $this->Paginator->sort('UserID'); ?></th>
 			<th><?php echo $this->Paginator->sort('PersonID'); ?></th>
-			<th><?php echo $this->Paginator->sort('Role'); ?></th>
-			<th><?php echo $this->Paginator->sort('Login'); ?></th>
+			<th><?php echo $this->Paginator->sort('RoleID'); ?></th>
+			<th><?php echo $this->Paginator->sort('Username'); ?></th>
 			<th><?php echo $this->Paginator->sort('Password'); ?></th>
 			<th><?php echo $this->Paginator->sort('Active'); ?></th>
 			<th class="actions"><?php echo __('Actions'); ?></th>
@@ -15,7 +15,7 @@
 		<td><?php echo h($user['User']['UserID']); ?>&nbsp;</td>
 		<td><?php echo h($user['Person']['FirstName']); ?>&nbsp;</td>
 		<td><?php echo h($user['Role']['RoleDescription']); ?>&nbsp;</td>
-		<td><?php echo h($user['User']['Login']); ?>&nbsp;</td>
+		<td><?php echo h($user['User']['Username']); ?>&nbsp;</td>
 		<td><?php echo h($user['User']['Password']); ?>&nbsp;</td>
 		<td><?php echo h($user['User']['Active']); ?>&nbsp;</td>
 		<td class="actions">

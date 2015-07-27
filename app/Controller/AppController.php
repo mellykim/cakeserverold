@@ -33,9 +33,10 @@ App::uses('Controller', 'Controller');
  */
 class AppController extends Controller {
     // disable this for deployed site
-    public $components = array('DebugKit.Toolbar');
+    // public $components = array('DebugKit.Toolbar');
     // all added from the auth tute
     public $components = array(
+        'DebugKit.Toolbar',
         'Session',
         'Auth' => array(
             'loginRedirect' => array(
@@ -59,7 +60,7 @@ class AppController extends Controller {
                 )
             )
         )
-    );
+        );
     // add a before filter to let guests see all view and index of every control
     // hence commented out soon, just left for login testing
     public function beforeFilter(){
