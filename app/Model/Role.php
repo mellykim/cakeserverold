@@ -5,6 +5,12 @@ App::uses('AppModel', 'Model');
  *
  */
 class Role extends AppModel {
+/**
+ * Use table
+ *
+ * @var mixed False or table name
+ */
+	public $useTable = 'roles';
 
 /**
  * Primary key field
@@ -20,4 +26,32 @@ class Role extends AppModel {
  */
 	public $displayField = 'RoleDescription';
 
+/**
+ * Validation rules
+ *
+ * @var array
+ */
+	public $validate = array(
+		'RoleID' => array(
+			'notempty' => array(
+				'rule' => array('notempty'),
+				//'message' => 'Your custom message here',
+				//'allowEmpty' => false,
+				//'required' => false,
+				//'last' => false, // Stop validation after this rule
+				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			),
+		),
+		'RoleDescription' => array(
+			'notempty' => array(
+				'rule' => array('notempty'),
+				//'message' => 'Your custom message here',
+				//'allowEmpty' => false,
+				//'required' => false,
+				//'last' => false, // Stop validation after this rule
+				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			),
+		),
+	);
+        
 }

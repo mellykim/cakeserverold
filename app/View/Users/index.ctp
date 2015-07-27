@@ -13,8 +13,8 @@
 	<?php foreach ($users as $user): ?>
 	<tr>
 		<td><?php echo h($user['User']['UserID']); ?>&nbsp;</td>
-		<td><?php echo h($user['User']['PersonID']); ?>&nbsp;</td>
-		<td><?php echo h($user['User']['Role']); ?>&nbsp;</td>
+		<td><?php echo h($user['Person']['FirstName']); ?>&nbsp;</td>
+		<td><?php echo h($user['Role']['RoleDescription']); ?>&nbsp;</td>
 		<td><?php echo h($user['User']['Login']); ?>&nbsp;</td>
 		<td><?php echo h($user['User']['Password']); ?>&nbsp;</td>
 		<td><?php echo h($user['User']['Active']); ?>&nbsp;</td>

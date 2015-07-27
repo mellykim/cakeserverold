@@ -100,15 +100,17 @@ class User extends AppModel {
 /** 
 * associations 
 */        
-    public $hasOne = array(
+    public $belongsTo = array(
         'Person' => array(
             'className' => 'Person',
             'foreignKey' => 'PersonID',
+            'conditions' => array('User.PersonID = Person.PersonID'),
             'dependent' => true // the perons details are deleted when the user is deleted
         ),
         'Role' => array(
             'className' => 'Role',
-            'foreignKey' => 'RoleID'
+            'foreignKey' => 'Role',
+            'conditions' => array('User.Role = Role.RoleID')
         )
     );      
 }
