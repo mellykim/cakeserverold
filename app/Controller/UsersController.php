@@ -19,7 +19,9 @@ class UsersController extends AppController {
 // added for the auth tute
     public function beforeFilter(){
         parent::beforeFilter();
-        $this->Auth->allow('add');
+        // we just add all the action names we want guests to use
+        // rename add to register later
+        $this->Auth->allow('add', 'logout');
     }
         
 /**
@@ -31,7 +33,20 @@ class UsersController extends AppController {
             $this->User->recursive = 0;
             $this->set('users', $this->Paginator->paginate());
     }
-
+// login method
+    public function login(){
+        if ($this->request->is('post')) {
+            if ($this->Auth->login()) {
+                return $this->redirect($this->Auth->redirectUrl());
+            }
+            $this->Session->setFlash(__('Invalid username or password, try again'));
+        } 
+    }
+ // logout method   
+    public function logout(){
+        return $this->redirect($this->Auth->logout());
+    }
+    
 /**
  * view method
  *
@@ -92,7 +107,7 @@ class UsersController extends AppController {
         } else {
         //        $options = array('conditions' => array('User.' . $this->User->primaryKey => $id));
         //        $this->request->data = $this->User->find('first', $options);
-        // the tutes code        
+        // the tutes code  may need to change Password      
                 $this->request->data = $this->User->findById($id);
                 unset($this->request->data['User']['password']);
         }

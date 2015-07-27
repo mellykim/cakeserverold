@@ -1,5 +1,7 @@
 <?php
 App::uses('AppModel', 'Model');
+// adding blowfish password hasher
+App::uses('BlowfishPasswordHasher', 'Controller/Component/Auth');
 /**
  * User Model
  *
@@ -50,7 +52,7 @@ class User extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'Role' => array(
+		'RoleID' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
 				//'message' => 'Your custom message here',
@@ -68,7 +70,7 @@ class User extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'Login' => array(
+		'Username' => array(
 			'notempty' => array(
 				'rule' => array('notempty'),
 				'message' => 'The Login must not be empty.',
@@ -112,6 +114,18 @@ class User extends AppModel {
             'foreignKey' => 'Role',
             'conditions' => array('User.Role = Role.RoleID')
         )
-    );      
+    );   
+    
+    // claas methods
+    // the password may need to change to Password, but maybe not if it matches the view
+    public function beforeSave($options = array()){
+        if (isset($this->data[$this->alias]['password'])) {
+        $passwordHasher = new BlowfishPasswordHasher();
+        $this->data[$this->alias]['password'] = $passwordHasher->hash(
+            $this->data[$this->alias]['password']
+            );
+        }
+        return true;
+    }
 }
 
