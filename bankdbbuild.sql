@@ -30,17 +30,18 @@ CREATE TABLE `thisbank`.`users` (
   `Active` TINYINT NOT NULL,
   PRIMARY KEY (`UserID`),
   INDEX `UserPersonID_idx` (`PersonID` ASC),
-  INDEX `UserRoleID_idx` (`Role` ASC),
+  INDEX `UserRoleID_idx` (`RoleID` ASC),
   CONSTRAINT `UserPersonID`
     FOREIGN KEY (`PersonID`)
     REFERENCES `thisbank`.`persons` (`PersonID`)
       ON DELETE RESTRICT
 	ON UPDATE RESTRICT,
   CONSTRAINT `UserRoleID`
-    FOREIGN KEY (`Role`)
+    FOREIGN KEY (`RoleID`)
     REFERENCES `thisbank`.`roles` (`RoleID`)
     ON DELETE RESTRICT
     ON UPDATE RESTRICT);
+    
 
 -- Create customers table	
 CREATE TABLE `thisbank`.`customers` (
@@ -400,106 +401,107 @@ insert into addresses (addressline1, postcode, state) values ('35 Coleman Street
 -- person addresses
 
 
-insert into personaddresses (addressid, personid) values (81, 105);
-insert into personaddresses (addressid, personid) values (1, 113);
-insert into personaddresses (addressid, personid) values (83, 107);
-insert into personaddresses (addressid, personid) values (72, 163);
-insert into personaddresses (addressid, personid) values (46, 129);
-insert into personaddresses (addressid, personid) values (78, 163);
-insert into personaddresses (addressid, personid) values (99, 194);
-insert into personaddresses (addressid, personid) values (89, 105);
-insert into personaddresses (addressid, personid) values (12, 200);
-insert into personaddresses (addressid, personid) values (21, 116);
-insert into personaddresses (addressid, personid) values (1, 181);
-insert into personaddresses (addressid, personid) values (28, 147);
-insert into personaddresses (addressid, personid) values (69, 162);
-insert into personaddresses (addressid, personid) values (18, 114);
-insert into personaddresses (addressid, personid) values (7, 193);
-insert into personaddresses (addressid, personid) values (17, 130);
-insert into personaddresses (addressid, personid) values (77, 105);
-insert into personaddresses (addressid, personid) values (95, 138);
-insert into personaddresses (addressid, personid) values (56, 135);
-insert into personaddresses (addressid, personid) values (77, 188);
-insert into personaddresses (addressid, personid) values (89, 168);
-insert into personaddresses (addressid, personid) values (78, 155);
-insert into personaddresses (addressid, personid) values (28, 147);
-insert into personaddresses (addressid, personid) values (23, 167);
-insert into personaddresses (addressid, personid) values (59, 177);
-insert into personaddresses (addressid, personid) values (51, 179);
-insert into personaddresses (addressid, personid) values (12, 117);
-insert into personaddresses (addressid, personid) values (53, 172);
-insert into personaddresses (addressid, personid) values (65, 149);
-insert into personaddresses (addressid, personid) values (53, 194);
-insert into personaddresses (addressid, personid) values (92, 161);
-insert into personaddresses (addressid, personid) values (69, 126);
-insert into personaddresses (addressid, personid) values (67, 145);
-insert into personaddresses (addressid, personid) values (2, 128);
-insert into personaddresses (addressid, personid) values (38, 168);
-insert into personaddresses (addressid, personid) values (94, 145);
-insert into personaddresses (addressid, personid) values (48, 125);
-insert into personaddresses (addressid, personid) values (13, 163);
-insert into personaddresses (addressid, personid) values (26, 151);
-insert into personaddresses (addressid, personid) values (71, 187);
-insert into personaddresses (addressid, personid) values (40, 166);
-insert into personaddresses (addressid, personid) values (66, 182);
-insert into personaddresses (addressid, personid) values (30, 134);
-insert into personaddresses (addressid, personid) values (63, 141);
-insert into personaddresses (addressid, personid) values (60, 183);
-insert into personaddresses (addressid, personid) values (54, 184);
-insert into personaddresses (addressid, personid) values (89, 177);
-insert into personaddresses (addressid, personid) values (97, 167);
-insert into personaddresses (addressid, personid) values (60, 142);
-insert into personaddresses (addressid, personid) values (14, 158);
-insert into personaddresses (addressid, personid) values (13, 124);
-insert into personaddresses (addressid, personid) values (29, 160);
-insert into personaddresses (addressid, personid) values (4, 116);
-insert into personaddresses (addressid, personid) values (84, 139);
-insert into personaddresses (addressid, personid) values (24, 125);
-insert into personaddresses (addressid, personid) values (46, 188);
-insert into personaddresses (addressid, personid) values (98, 160);
-insert into personaddresses (addressid, personid) values (76, 125);
-insert into personaddresses (addressid, personid) values (92, 171);
-insert into personaddresses (addressid, personid) values (2, 184);
-insert into personaddresses (addressid, personid) values (37, 143);
-insert into personaddresses (addressid, personid) values (81, 129);
-insert into personaddresses (addressid, personid) values (4, 187);
-insert into personaddresses (addressid, personid) values (87, 200);
-insert into personaddresses (addressid, personid) values (67, 197);
-insert into personaddresses (addressid, personid) values (96, 117);
-insert into personaddresses (addressid, personid) values (17, 153);
-insert into personaddresses (addressid, personid) values (75, 149);
-insert into personaddresses (addressid, personid) values (4, 174);
-insert into personaddresses (addressid, personid) values (96, 161);
-insert into personaddresses (addressid, personid) values (28, 142);
-insert into personaddresses (addressid, personid) values (39, 165);
-insert into personaddresses (addressid, personid) values (22, 117);
-insert into personaddresses (addressid, personid) values (48, 172);
-insert into personaddresses (addressid, personid) values (48, 142);
-insert into personaddresses (addressid, personid) values (19, 171);
-insert into personaddresses (addressid, personid) values (58, 176);
-insert into personaddresses (addressid, personid) values (13, 175);
-insert into personaddresses (addressid, personid) values (7, 157);
-insert into personaddresses (addressid, personid) values (17, 195);
-insert into personaddresses (addressid, personid) values (32, 139);
-insert into personaddresses (addressid, personid) values (50, 140);
-insert into personaddresses (addressid, personid) values (50, 170);
-insert into personaddresses (addressid, personid) values (9, 179);
-insert into personaddresses (addressid, personid) values (86, 194);
-insert into personaddresses (addressid, personid) values (36, 150);
-insert into personaddresses (addressid, personid) values (51, 149);
-insert into personaddresses (addressid, personid) values (36, 175);
-insert into personaddresses (addressid, personid) values (23, 146);
-insert into personaddresses (addressid, personid) values (42, 132);
-insert into personaddresses (addressid, personid) values (3, 175);
-insert into personaddresses (addressid, personid) values (27, 163);
-insert into personaddresses (addressid, personid) values (14, 138);
-insert into personaddresses (addressid, personid) values (11, 108);
-insert into personaddresses (addressid, personid) values (11, 121);
-insert into personaddresses (addressid, personid) values (71, 175);
-insert into personaddresses (addressid, personid) values (36, 167);
-insert into personaddresses (addressid, personid) values (7, 178);
-insert into personaddresses (addressid, personid) values (6, 145);
-insert into personaddresses (addressid, personid) values (9, 112);
+
+insert into personaddresses (addressid, personid) values (81, 10);
+insert into personaddresses (addressid, personid) values (1, 11);
+insert into personaddresses (addressid, personid) values (83, 7);
+insert into personaddresses (addressid, personid) values (72, 63);
+insert into personaddresses (addressid, personid) values (46, 19);
+insert into personaddresses (addressid, personid) values (78, 13);
+insert into personaddresses (addressid, personid) values (99, 19);
+insert into personaddresses (addressid, personid) values (89, 15);
+insert into personaddresses (addressid, personid) values (12, 20);
+insert into personaddresses (addressid, personid) values (21, 16);
+insert into personaddresses (addressid, personid) values (1, 81);
+insert into personaddresses (addressid, personid) values (28, 47);
+insert into personaddresses (addressid, personid) values (69, 62);
+insert into personaddresses (addressid, personid) values (18, 14);
+insert into personaddresses (addressid, personid) values (7, 13);
+insert into personaddresses (addressid, personid) values (17, 30);
+insert into personaddresses (addressid, personid) values (77, 05);
+insert into personaddresses (addressid, personid) values (95, 38);
+insert into personaddresses (addressid, personid) values (56, 35);
+insert into personaddresses (addressid, personid) values (77, 88);
+insert into personaddresses (addressid, personid) values (89, 68);
+insert into personaddresses (addressid, personid) values (78, 55);
+insert into personaddresses (addressid, personid) values (28, 47);
+insert into personaddresses (addressid, personid) values (23, 67);
+insert into personaddresses (addressid, personid) values (59, 77);
+insert into personaddresses (addressid, personid) values (51, 79);
+insert into personaddresses (addressid, personid) values (12, 17);
+insert into personaddresses (addressid, personid) values (53, 72);
+insert into personaddresses (addressid, personid) values (65, 49);
+insert into personaddresses (addressid, personid) values (53, 94);
+insert into personaddresses (addressid, personid) values (92, 61);
+insert into personaddresses (addressid, personid) values (69, 26);
+insert into personaddresses (addressid, personid) values (67, 45);
+insert into personaddresses (addressid, personid) values (2, 18);
+insert into personaddresses (addressid, personid) values (38, 68);
+insert into personaddresses (addressid, personid) values (94, 45);
+insert into personaddresses (addressid, personid) values (48, 25);
+insert into personaddresses (addressid, personid) values (13, 63);
+insert into personaddresses (addressid, personid) values (26, 51);
+insert into personaddresses (addressid, personid) values (71, 87);
+insert into personaddresses (addressid, personid) values (40, 66);
+insert into personaddresses (addressid, personid) values (66, 82);
+insert into personaddresses (addressid, personid) values (30, 34);
+insert into personaddresses (addressid, personid) values (63, 41);
+insert into personaddresses (addressid, personid) values (60, 83);
+insert into personaddresses (addressid, personid) values (54, 84);
+insert into personaddresses (addressid, personid) values (89, 77);
+insert into personaddresses (addressid, personid) values (97, 67);
+insert into personaddresses (addressid, personid) values (60, 42);
+insert into personaddresses (addressid, personid) values (14, 58);
+insert into personaddresses (addressid, personid) values (13, 24);
+insert into personaddresses (addressid, personid) values (29, 60);
+insert into personaddresses (addressid, personid) values (4, 16);
+insert into personaddresses (addressid, personid) values (84, 39);
+insert into personaddresses (addressid, personid) values (24, 25);
+insert into personaddresses (addressid, personid) values (46, 88);
+insert into personaddresses (addressid, personid) values (98, 60);
+insert into personaddresses (addressid, personid) values (76, 25);
+insert into personaddresses (addressid, personid) values (92, 71);
+insert into personaddresses (addressid, personid) values (2, 14);
+insert into personaddresses (addressid, personid) values (37, 43);
+insert into personaddresses (addressid, personid) values (81, 29);
+insert into personaddresses (addressid, personid) values (4, 17);
+insert into personaddresses (addressid, personid) values (87, 1);
+insert into personaddresses (addressid, personid) values (67, 97);
+insert into personaddresses (addressid, personid) values (96, 17);
+insert into personaddresses (addressid, personid) values (17, 53);
+insert into personaddresses (addressid, personid) values (75, 49);
+insert into personaddresses (addressid, personid) values (4, 14);
+insert into personaddresses (addressid, personid) values (96, 61);
+insert into personaddresses (addressid, personid) values (28, 42);
+insert into personaddresses (addressid, personid) values (39, 65);
+insert into personaddresses (addressid, personid) values (22, 17);
+insert into personaddresses (addressid, personid) values (48, 72);
+insert into personaddresses (addressid, personid) values (48, 42);
+insert into personaddresses (addressid, personid) values (19, 71);
+insert into personaddresses (addressid, personid) values (58, 76);
+insert into personaddresses (addressid, personid) values (13, 75);
+insert into personaddresses (addressid, personid) values (7, 17);
+insert into personaddresses (addressid, personid) values (17, 95);
+insert into personaddresses (addressid, personid) values (32, 39);
+insert into personaddresses (addressid, personid) values (50, 40);
+insert into personaddresses (addressid, personid) values (50, 70);
+insert into personaddresses (addressid, personid) values (9, 19);
+insert into personaddresses (addressid, personid) values (86, 94);
+insert into personaddresses (addressid, personid) values (36, 50);
+insert into personaddresses (addressid, personid) values (51, 49);
+insert into personaddresses (addressid, personid) values (36, 75);
+insert into personaddresses (addressid, personid) values (23, 46);
+insert into personaddresses (addressid, personid) values (42, 32);
+insert into personaddresses (addressid, personid) values (3, 15);
+insert into personaddresses (addressid, personid) values (27, 63);
+insert into personaddresses (addressid, personid) values (14, 38);
+insert into personaddresses (addressid, personid) values (11, 8);
+insert into personaddresses (addressid, personid) values (11, 21);
+insert into personaddresses (addressid, personid) values (71, 75);
+insert into personaddresses (addressid, personid) values (36, 67);
+insert into personaddresses (addressid, personid) values (7, 18);
+insert into personaddresses (addressid, personid) values (6, 15);
+insert into personaddresses (addressid, personid) values (9, 12);
 
 -- bank account types
 insert into accounttypes (accounttypedescription, accountinterest) values ('Savings', 0.03);
@@ -512,16 +514,15 @@ insert into branches (branchname, branchphone) values ('Brisbane', '(07)3194-494
 insert into branches (branchname, branchphone) values ('Sydney', '(02)9222-9999');
 
 -- customers
-insert into customers (createdate, active, personID) values (now(), 1, 102);
-insert into customers (createdate, active, personID) values (now(), 1, 105);
-insert into customers (createdate, active, personID) values (now(), 1, 110);
-insert into customers (createdate, active, personID) values (now(), 1, 102);
-insert into customers (createdate, active, personID) values (now(), 1, 112);
-insert into customers (createdate, active, personID) values (now(), 1, 120);
-insert into customers (createdate, active, personID) values (now(), 1, 141);
-insert into customers (createdate, active, personID) values (now(), 1, 158);
-insert into customers (createdate, active, personID) values (now(), 1, 171
-
+insert into customers (createdate, active, personID) values (now(), 1, 2);
+insert into customers (createdate, active, personID) values (now(), 1, 5);
+insert into customers (createdate, active, personID) values (now(), 1, 1);
+insert into customers (createdate, active, personID) values (now(), 1, 12);
+insert into customers (createdate, active, personID) values (now(), 1, 12);
+insert into customers (createdate, active, personID) values (now(), 1, 10);
+insert into customers (createdate, active, personID) values (now(), 1, 11);
+insert into customers (createdate, active, personID) values (now(), 1, 18);
+insert into customers (createdate, active, personID) values (now(), 1, 17);
 -- roles
 insert into roles (roledescription) values ('Admin'),('Customer');
 
@@ -530,39 +531,41 @@ insert into persons (firstname, lastname, dob, emailaddress, active) values ('La
 insert into persons (firstname, lastname, dob, emailaddress, active) values ('Brett','Ayre','1985-05-16','larissa.wilkinson@gmail.com', 1);
 insert into persons (firstname, lastname, dob, emailaddress, active) values ('Melissa','Thompson','1985-05-16','larissa.wilkinson@gmail.com', 1);
 
-insert into users (personid, role, login, password, active) values (201, 1, 'lwilson','password', 1);
-insert into users (personid, role, login, password, active) values (202, 1, 'bayre','password', 1);
-insert into users (personid, role, login, password, active) values (203, 1, 'mthompson','password', 1);
+insert into users (personid, roleid, username, password, active) values ((select max(personid) from persons where firstname = 'Lara' and lastname = 'Wilson'), 1, 'lwilson','password', 1);
+insert into users (personid, roleid, username, password, active) values ((select max(personid) from persons where firstname = 'Brett' and lastname = 'Ayre'), 1, 'bayre','password', 1);
+insert into users (personid, roleid, username, password, active) values ((select max(personid) from persons where firstname = 'Melissa' and lastname = 'Thompson'), 1, 'mthompson','password', 1);
+
+
 
 -- loan types
 insert into loantypes (loantypedescription, loaninterest) values ('Personal', 0.15),('Home', 0.05),('Secure', 0.15);
 
 -- accounts
-insert into accounts (openbranch, active, opendate, accounttype, customerid) values (3,1,'2015-01-01',1,2);
-insert into accounts (openbranch, active, opendate, accounttype, customerid) values (3,1,'2015-01-01',2,2);
-insert into accounts (openbranch, active, opendate, accounttype, customerid) values (3,1,'2013-05-01',1,2);
-insert into accounts (openbranch, active, opendate, accounttype, customerid) values (3,1,'2014-05-01',1,2);
-insert into accounts (openbranch, active, opendate, accounttype, customerid) values (3,1,'2014-05-01',2,2);
-insert into accounts (openbranch, active, opendate, accounttype, customerid) values (3,1,'2015-03-08',2,3);
-insert into accounts (openbranch, active, opendate, accounttype, customerid) values (3,1,'2015-03-08',1,3);
-insert into accounts (openbranch, active, opendate, accounttype, customerid) values (3,1,'2013-01-16',1,4);
-insert into accounts (openbranch, active, opendate, accounttype, customerid) values (3,1,'2013-01-16',2,4);
-insert into accounts (openbranch, active, opendate, accounttype, customerid) values (3,1,'2012-01-25',1,5);
-insert into accounts (openbranch, active, opendate, accounttype, customerid) values (3,1,'2012-01-25',2,5);
-insert into accounts (openbranch, active, opendate, accounttype, customerid) values (5, 1, '2015-03-03',1,7);
-insert into accounts (openbranch, active, opendate, accounttype, customerid) values (5, 1, '2015-04-03',2,8);
-insert into accounts (openbranch, active, opendate, accounttype, customerid) values (5, 1, '2015-05-03',1,9);
+insert into accounts (openbranch, active, opendate, accounttype, customerid) values (1,1,'2015-01-01',1,2);
+insert into accounts (openbranch, active, opendate, accounttype, customerid) values (1,1,'2015-01-01',2,2);
+insert into accounts (openbranch, active, opendate, accounttype, customerid) values (1,1,'2013-05-01',1,2);
+insert into accounts (openbranch, active, opendate, accounttype, customerid) values (1,1,'2014-05-01',1,2);
+insert into accounts (openbranch, active, opendate, accounttype, customerid) values (1,1,'2014-05-01',2,2);
+insert into accounts (openbranch, active, opendate, accounttype, customerid) values (1,1,'2015-03-08',2,3);
+insert into accounts (openbranch, active, opendate, accounttype, customerid) values (1,1,'2015-03-08',1,3);
+insert into accounts (openbranch, active, opendate, accounttype, customerid) values (1,1,'2013-01-16',1,4);
+insert into accounts (openbranch, active, opendate, accounttype, customerid) values (1,1,'2013-01-16',2,4);
+insert into accounts (openbranch, active, opendate, accounttype, customerid) values (1,1,'2012-01-25',1,5);
+insert into accounts (openbranch, active, opendate, accounttype, customerid) values (1,1,'2012-01-25',2,5);
+insert into accounts (openbranch, active, opendate, accounttype, customerid) values (2, 1, '2015-03-03',1,7);
+insert into accounts (openbranch, active, opendate, accounttype, customerid) values (2, 1, '2015-04-03',2,8);
+insert into accounts (openbranch, active, opendate, accounttype, customerid) values (2, 1, '2015-05-03',1,9);
+
 
 -- loans
-insert into accounts (openbranch, active, opendate, accounttype, customerid) values (3,1,'2014-01-01',3,2);
+insert into accounts (openbranch, active, opendate, accounttype, customerid) values (1,1,'2014-01-01',3,2);
 insert into loans (LoanDescription, LoanType, LoanDuration, StartDate, AccountID) values ('Car Loan', 1, '2 years', '2014-01-01', (select max(accountid) from accounts where accounttype = 3));
 
-insert into accounts (openbranch, active, opendate, accounttype, customerid) values (3,1,'2014-06-01',3,6);
+insert into accounts (openbranch, active, opendate, accounttype, customerid) values (1,1,'2014-06-01',3,6);
 insert into loans (LoanDescription, LoanType, LoanDuration, StartDate, AccountID) values ('Home Loan', 2, '5 years', '2014-06-01', (select max(accountid) from accounts where accounttype = 3));
 
-insert into accounts (openbranch, active, opendate, accounttype, customerid) values (3,1,'2014-05-01',3,10);
+insert into accounts (openbranch, active, opendate, accounttype, customerid) values (1,1,'2014-05-01',3,9);
 insert into loans (LoanDescription, LoanType, LoanDuration, StartDate, AccountID) values ('Secure Loan', 3, '3 years', '2014-05-01', (select max(accountid) from accounts where accounttype = 3));
-
 
 -- transactiontypes
 insert into transactiontypes (transactiontypedesc) values ('Credit'),('Debit');
