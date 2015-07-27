@@ -24,8 +24,8 @@ COMMENT = '			';
 CREATE TABLE `thisbank`.`users` (
   `UserID` INT NOT NULL AUTO_INCREMENT,
   `PersonID` INT NOT NULL,
-  `Role` INT NOT NULL,
-  `Login` VARCHAR(200) NOT NULL,
+  `RoleID` INT NOT NULL,
+  `Username` VARCHAR(200) NOT NULL,
   `Password` VARCHAR(20) NOT NULL,
   `Active` TINYINT NOT NULL,
   PRIMARY KEY (`UserID`),
