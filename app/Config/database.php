@@ -13,8 +13,8 @@ class DATABASE_CONFIG {
 		'datasource' => 'Database/Mysql',
 		'persistent' => false,
 		'host' => 'localhost',
-		'login' => 'webadmin',
-		'password' => 'Backwards7',
+		'login' => 'root',
+		'password' => '',
 		'database' => 'thisbank',
 	);
 }
