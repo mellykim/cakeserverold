@@ -83,12 +83,6 @@ video {
 	color: white;
 }
 
-.menuarea {
-	width: 1000px;
-	height: 150px;
-	margin: auto;
-}
-
 .menu {
 	height: 110px;
 	padding-top: 5px;
@@ -98,6 +92,7 @@ video {
 }
 
 .logo {
+
 }
 .contentarea {
 	width: 1000px;

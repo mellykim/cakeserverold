@@ -14,7 +14,7 @@ class DATABASE_CONFIG {
 		'persistent' => false,
 		'host' => 'localhost',
 		'login' => 'root',
-		'password' => '',
+		'password' => 'Pickles1*',
 		'database' => 'thisbank',
 	);
 }

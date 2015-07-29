@@ -35,20 +35,18 @@
 
 
 <body>
-	<div id="container">
 
-		<div id="header">
-			<?php echo $this->element('menu'); ?>
+<div id="header"><?php echo $this->element('menu'); ?></div>
 
-		</div>
-		<div class="contentarea">
-			<?php echo $this->Session->flash(); ?>
-			<?php echo $this->fetch('content'); ?>
+<div class = "container">
+	<div class = "table">
+		<?php echo $this->Session->flash(); ?>
+		<?php echo $this->fetch('content'); ?>
+	</div>
+</div>
 
-		</div>
+<div id="footer">
+	<div id = "footertext"><p> Footer </p></div>
+</div>
 
-		<div id="footer">
-                <div id = "footertext">
-	                <p> Footer </p>
-                </div>
-        </div>
+</body>
